@@ -6,7 +6,6 @@ echo "The Job name is:  ${env.JOB_NAME} "
 echo "The Build number is:  ${env.BUILD_NUMBER} "
 
 properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '3', daysToKeepStr: '', numToKeepStr: '3')), [$class: 'JobLocalConfiguration', changeReasonComment: '']])
-mail bcc: '', body: 'This is the Jenkins Pipeline script demo.', cc: '', from: '', replyTo: '', subject: 'jenkinsPipelinescript', to: 'maheshh239@gmail.com'
 
 stage ('getthecodefromSCM'){
 git branch: 'development', credentialsId: '7ed721c2-5830-483c-882e-3605b9bb2372', url: 'https://github.com/Maheshkumarh/maven-web-application.git'
